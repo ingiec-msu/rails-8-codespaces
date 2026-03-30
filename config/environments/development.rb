@@ -9,6 +9,8 @@ Rails.application.configure do
     host = "#{codespace_name}-3000.#{codespaces_port_forwarding_domain}"
 
     config.hosts << host
+    # Disable CSRF origin check for Codespaces port forwarding
+    config.action_controller.forgery_protection_origin_check = false
   end
 
   # Make code changes take effect immediately without server restart.
